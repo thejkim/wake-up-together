@@ -35,6 +35,7 @@ public class Database {
     private final OkHttpClient client = new OkHttpClient();
     private final String web_API_address = "http://whodiez.dynns.com:7770";
     private final String local = "http://10.0.2.2:7770";
+    
     public void getAlarmListForSelectedPackage(int pID, int uID, PackageItemActivity act, DatabaseResponseHandler responseCallback) {
         final String urlStr = web_API_address + "/alarm/" + pID + "/" + uID;
         Request request = new Request.Builder()
