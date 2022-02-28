@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyAlarmItemActivity">
+
+    <TextView
+        android:id="@+id/selectTimeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Select time you want to wake up at"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/timeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:minHeight="48dp"
+        android:text="Select Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectTimeTitle" />
+
+    <TextView
+        android:id="@+id/alarmItemViewAddOrEdit_AlarmDescTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Alarm Description"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/timeBtn" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/alarmItemViewAddOrEdit_AlarmDescTitle"
+        app:endIconMode="clear_text"
+        >
+
+        <EditText
+            android:id="@+id/alarmItemViewAddOrEdit_AlarmDescTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:hint="Type the alarm description"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/alarmItemViewAddOrEdit_PackageNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Package Description"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <LinearLayout
+        android:id="@+id/packageitem_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/alarmItemViewAddOrEdit_PackageNameTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alarmItemViewAddOrEdit_packageDropdown"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/alarmItemViewAddOrEdit_AddPackageBtn"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageAutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:inputType="none"
+                    android:text="Select a Package"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_AddPackageBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:minHeight="48dp"
+                android:text="+"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1.2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alarmItemViewAddOrEdit_RepeatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Repeat"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/packageitem_linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/alarmItemViewAddOrEdit_RepeatTitle"
+        app:layout_constraintTop_toBottomOf="@+id/alarmItemViewAddOrEdit_RepeatTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatSunBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:backgroundTint="@color/light_blue"
+                android:text="S"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatMonBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="M"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatSunBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatTueBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="T"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatMonBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatWedBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="W"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatTueBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatThuBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="T"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatWedBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatFriBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="F"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatThuBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/alarmItemViewAddOrEdit_RepeatSatBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="S"
+                android:backgroundTint="@color/light_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toEndOf="@+id/alarmItemViewAddOrEdit_RepeatFriBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alarmItemViewAddOrEdit_SoundTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sound"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/alarmItemViewAddOrEdit_soundDropdown"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmItemViewAddOrEdit_SoundTitle">
+
+        <AutoCompleteTextView
+            android:id="@+id/soundAutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Select a Sound" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/AlarmItemViewAddOrEdit_vibrateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Vibrate"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/alarmItemViewAddOrEdit_soundDropdown" />
+
+    <ToggleButton
+        android:id="@+id/vibrateTB"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="ToggleButton"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/alarmItemViewAddOrEdit_soundDropdown"
+        app:layout_constraintTop_toTopOf="@+id/AlarmItemViewAddOrEdit_vibrateTitle"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/AlarmItemViewAddOrEdit_snoozeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Snooze"
+        app:layout_constraintStart_toStartOf="@+id/selectTimeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/vibrateTB" />
+
+    <ToggleButton
+        android:id="@+id/snoozeTB"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="ToggleButton"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/alarmItemViewAddOrEdit_soundDropdown"
+        app:layout_constraintStart_toStartOf="@+id/vibrateTB"
+        app:layout_constraintTop_toTopOf="@+id/AlarmItemViewAddOrEdit_snoozeTitle"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

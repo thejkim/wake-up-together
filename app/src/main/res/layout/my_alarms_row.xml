@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myAlarmCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/myAlarms_byPackage_packageDesc_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="#000000"
+                android:textSize="40sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/clock_period_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Clock_period"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/myAlarms_byPackage_packageDesc_txt"
+                app:layout_constraintStart_toEndOf="@+id/myAlarms_byPackage_packageDesc_txt" />
+
+            <TextView
+                android:id="@+id/createdBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myAlarms_byPackage_packageDesc_txt" />
+
+            <TextView
+                android:id="@+id/alarmDesc_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/createdBy"
+                app:layout_constraintStart_toEndOf="@+id/createdBy"
+                app:layout_constraintTop_toBottomOf="@+id/myAlarms_byPackage_packageDesc_txt" />
+
+            <TextView
+                android:id="@+id/myAlarms_byPackage_numberOfAlarms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Repeat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createdBy" />
+
+            <ToggleButton
+                android:id="@+id/packageOnOffToggleButton"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                app:layout_constraintBottom_toTopOf="@+id/createdBy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/myAlarms_byPackage_packageDesc_txt" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
