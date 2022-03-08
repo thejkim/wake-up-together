@@ -1,5 +1,5 @@
 # Wake Up Together
-A Node.js server and Android alarm application that people can manage and share their alarm patterns. They can share their own alarms as well as use a set of alarms shared by others. They would wake up, work out, study, whatever one does regularly, all together. Hope it would help them to be encouraged in their lifestyle. 
+A Node.js server and Android alarm application that people can manage and share their alarm patterns. They can share their own alarms as well as use a set of alarms shared by others. They would wake up, work out, study, whatever one does regularly, all together. Hope it would help them to be encouraged in their lifestyle.
 
 # What You Can Do With Wake Up Together
 <h3>1. Manage Alarms<h3>
